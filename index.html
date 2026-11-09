@@ -1,0 +1,23 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>A little surprise 💌</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100svh;background:#08050d;color:#fff;font-family:Georgia,serif;overflow:hidden}
+.screen{position:fixed;inset:0;display:none;align-items:center;justify-content:center;text-align:center;padding:22px;background-size:cover;background-position:center}
+.screen.active{display:flex}#s1,#s2,#s3,#s4{background-image:linear-gradient(#0005,#0007),url('assets/spiderweb-background.jfif')}
+.panel{max-width:560px;width:100%;padding:25px 18px;border-radius:22px;background:#14091bbd;backdrop-filter:blur(3px);border:1px solid #b68bdf44;box-shadow:0 0 35px #9a45c555}
+p{font-size:clamp(18px,4vw,25px);line-height:1.5}.small{font-size:16px;color:#e8c9ed}
+button{font:inherit;border:0;cursor:pointer;border-radius:999px;padding:14px 24px;margin:8px;background:linear-gradient(135deg,#ffc5e2,#c8a2ff);color:#260c2d;font-weight:bold}
+.hero{font-size:clamp(70px,18vw,120px);filter:drop-shadow(0 0 15px #ff8eea);animation:bob 2s infinite ease-in-out}
+@keyframes bob{50%{transform:translateY(-12px) rotate(3deg)}}@keyframes fade{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}.fade{animation:fade 1s both}
+#s5{background:#08050d}#s5:before{content:"";position:absolute;inset:0;background:url('assets/spiderweb-background.jfif') center/cover;filter:blur(9px);transform:scale(1.08);opacity:.7}
+.envelope-wrap{position:relative;z-index:1}.envelope{width:min(78vw,330px);height:210px;background:#fffaf0;position:relative;margin:25px auto;border-radius:8px;box-shadow:0 15px 50px #0009;cursor:pointer}
+.envelope:before{content:"";position:absolute;inset:0;background:#f0e5d7;clip-path:polygon(0 0,50% 58%,100% 0)}.envelope:after{content:"";position:absolute;inset:0;background:#fff5e8;clip-path:polygon(0 100%,50% 48%,100% 100%)}.stamp{position:absolute;z-index:2;left:50%;top:52%;transform:translate(-50%,-50%);font-size:42px}
+#s6{background:#08050d;overflow:auto;align-items:flex-start}#s6 img{max-height:94svh;max-width:94vw;object-fit:contain;border-radius:8px}.close{position:fixed;top:10px;right:10px;z-index:5}
+</style></head><body>
+<section class="screen active" id="s1"><div class="panel fade"><div class="hero">🕷️</div><p>Helllowwww... my laddyyy 💗</p><p class="small">A tiny surprise is waiting for you...</p></div></section>
+<section class="screen" id="s2"><div class="panel fade"><p>You aree witnessing ur last week's gift 🎁</p><button onclick="go(3)">Continue 💫</button></div></section>
+<section class="screen" id="s3"><div class="panel fade"><p>Before starting this tell me do u love mee babyy??</p><button onclick="go(4)">A) yess 💗</button><button onclick="go(4)">B) option a 😌</button></div></section>
+<section class="screen" id="s4"><div class="panel fade"><p>Awwwwwwww... 🙈<br>i knewww ittt!!! 💋✨</p><button onclick="go(5)">Open your surprise 💌</button></div></section>
+<section class="screen" id="s5"><div class="envelope-wrap fade"><p>press it 👄</p><div class="envelope" onclick="go(6)" role="button" aria-label="Open envelope"><span class="stamp">💋</span></div><p class="small">Tap the envelope to open your letter</p></div></section>
+<section class="screen" id="s6"><button class="close" onclick="go(5)">↩</button><img src="assets/letter.jpeg" alt="Your letter"></section>
+<script>function go(n){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('s'+n).classList.add('active')}setTimeout(()=>go(2),4000);</script>
+</body></html>
